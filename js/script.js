@@ -34,6 +34,11 @@ const app = new Vue (
     },
     
     methods: {
+        removeTodoElement(todoIndex){
+            if (this.todoList[todoIndex] != undefined){
+                this.todoList.splice(todoIndex, 1)
+            }
+        },
 
     },
 });

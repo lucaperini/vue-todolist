@@ -28,15 +28,15 @@
         <div class="container-fluid">
             <div class="row text-center">
                 <div class="col-12">
-                    <!-- <div class="col-12 p-5">
+                    <div class="col-12 p-5">
                         <input type="text">
                         <button class="btn bg-warning">Aggiungi</button>
-                    </div> -->
+                    </div>
                     <div class="col-12 text-start">
                         <ul class="list-group">
                             <li v-for="(element, index) in todoList" :class="(element.done === true) ? 'taskDone' : ''" class="list-group-item d-flex justify-content-between">
                                 {{element.text}} 
-                            <span><i class="fa-solid fa-xmark"></i></span>
+                            <span><i @click="removeTodoElement(index)" class="fa-solid fa-xmark"></i></span>
                             </li>
                             
                             
