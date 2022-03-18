@@ -5,6 +5,9 @@ const app = new Vue (
     el : "#app",
 
     data: { 
+
+        newTodoContent:"",
+        
         todoList: [
             {
                 text: "comprare fave di fuca",
@@ -31,9 +34,22 @@ const app = new Vue (
                 done: true,
             },
         ]
+        
     },
     
     methods: {
+
+        addTodoElement(todoContent){
+            if (todoContent.trim() != ""){
+                const pushTodo = {
+                    text: todoContent,
+                    done: false,
+                }
+                this.todoList.push(pushTodo);
+                this.newTodoContent =  "";
+            }
+        },
+        
         removeTodoElement(todoIndex){
             if (this.todoList[todoIndex] != undefined){
                 this.todoList.splice(todoIndex, 1)
