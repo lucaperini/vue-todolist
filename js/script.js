@@ -8,6 +8,7 @@ const app = new Vue (
 
         newTodoContent:"",
         
+        
         todoList: [
             {
                 text: "comprare fave di fuca",
@@ -40,6 +41,7 @@ const app = new Vue (
     methods: {
 
         addTodoElement(todoContent){
+            
             if (todoContent.trim() != ""){
                 const pushTodo = {
                     text: todoContent,
@@ -51,10 +53,26 @@ const app = new Vue (
         },
         
         removeTodoElement(todoIndex){
+            
             if (this.todoList[todoIndex] != undefined){
                 this.todoList.splice(todoIndex, 1)
             }
         },
 
+        changeTodoStatus(todoIndex){
+            
+            if (this.todoList[todoIndex].done == true){
+                document.getElementsByClassName('list-group-item')[todoIndex].classList.toggle('taskDone');
+                document.getElementsByClassName('list-group-item')[todoIndex].classList.toggle('taskToDo');
+                this.todoList[todoIndex].done == false;
+            } else if (this.todoList[todoIndex].done == false){
+                document.getElementsByClassName('list-group-item')[todoIndex].classList.toggle('taskDone');
+                document.getElementsByClassName('list-group-item')[todoIndex].classList.toggle('taskToDo');
+                this.todoList[todoIndex].done == true;
+            }
+        }
+        
     },
 });
+
+

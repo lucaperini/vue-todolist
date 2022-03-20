@@ -27,15 +27,15 @@
     <main id="app">
         <div class="container-fluid">
             <div class="row text-center">
-                <div class="col-12">
+                <div class="col-6 offset-3">
                     <div class="col-12 p-5">
                         <input @keydown.enter="addTodoElement(newTodoContent)" v-model="newTodoContent" type="text" placeholder="Aggiungi Todo...">
                         <button @click="addTodoElement(newTodoContent)" class="btn bg-warning">Aggiungi</button>
                     </div>
                     <div class="col-12 text-start">
                         <ul class="list-group">
-                            <li v-for="(element, index) in todoList" :class="(element.done === true) ? 'taskDone' : ''" class="list-group-item d-flex justify-content-between">
-                                {{element.text}} 
+                            <li @click="changeTodoStatus(index)" v-for="(element, index) in todoList" :class="(element.done === true) ? 'taskDone' : 'taskToDo'"class="list-group-item d-flex justify-content-between">
+                            {{element.text}} 
                             <span><i @click="removeTodoElement(index)" class="fa-solid fa-xmark"></i></span>
                             </li>
                         </ul>

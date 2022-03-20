@@ -1,11 +1,23 @@
 .taskDone{
     text-decoration: line-through;
+    
+    
+    
+}
+
+.taskToDo{
+    text-decoration: none;
+    
+    
+    
 }
 
 ul .li{
     list-style-type: none;
     
 }
-span i:hover{
+
+
+ul .li:hover, span i:hover{
     cursor:pointer;
 }
