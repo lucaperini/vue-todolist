@@ -1,5 +1,8 @@
 .taskDone{
     text-decoration: line-through;
+    border-left: 5px solid green;
+    color:green;
+    
     
     
     
@@ -7,6 +10,9 @@
 
 .taskToDo{
     text-decoration: none;
+    border-left: 5px solid red;
+    color:red;
+    
     
     
     
